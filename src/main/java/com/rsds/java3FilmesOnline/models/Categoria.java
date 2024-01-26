@@ -23,6 +23,10 @@ public class Categoria {
 	@OneToMany(mappedBy = "categoria")
 	private List<Filme> filmes = new ArrayList<>();
 
+	
+	public Categoria() {
+	}
+
 	public Categoria(String nome, String descricao) {
 		this.nome = nome;
 		this.descricao = descricao;

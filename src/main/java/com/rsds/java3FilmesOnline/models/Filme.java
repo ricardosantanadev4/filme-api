@@ -25,6 +25,10 @@ public class Filme {
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
+	
+	public Filme() {
+	}
+
 	public Filme(String titulo, String nome_autor, String texto, String tamanho, Categoria categoria) {
 		this.titulo = titulo;
 		this.nome_autor = nome_autor;
