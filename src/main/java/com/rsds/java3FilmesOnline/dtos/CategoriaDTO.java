@@ -1,34 +1,26 @@
-package com.rsds.java3FilmesOnline.models;
+package com.rsds.java3FilmesOnline.dtos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rsds.java3FilmesOnline.models.Categoria;
+import com.rsds.java3FilmesOnline.models.Filme;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+public class CategoriaDTO {
 
-@Entity
-public class Categoria {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
 	private String nome;
+
 	private String descricao;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "categoria")
 	private List<Filme> filmes = new ArrayList<>();
-	
-	public Categoria() {
-	}
 
-	public Categoria(String nome, String descricao) {
-		this.nome = nome;
-		this.descricao = descricao;
+	public CategoriaDTO(Categoria categoria) {
+		this.id = categoria.getId();
+		this.nome = categoria.getNome();
+		this.descricao = categoria.getDescricao();
+		this.filmes = categoria.getFilmes();
 	}
 
 	public Long getId() {

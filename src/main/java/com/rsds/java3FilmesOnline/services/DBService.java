@@ -21,9 +21,9 @@ public class DBService {
 
 	public void instanciaDB() {
 
-		Categoria categoria1 = new Categoria("Nome Cateogira1", "Descrição Categoria1");
-		Categoria categoria2 = new Categoria("Nome Cateogira2", "Descrição Categoria2");
-		Categoria categoria3 = new Categoria("Nome Cateogira3", "Descrição Categoria3");
+		Categoria categoria1 = new Categoria("Ação", "Filme de Ação");
+		Categoria categoria2 = new Categoria("Comédia", "Filme de Comédia");
+		Categoria categoria3 = new Categoria("Aventura", "Filme de Aventura");
 
 		Filme filme1 = new Filme("Título Filme1", "Nome_Autor Filme1", "Texto Filme1", "Médio", categoria1);
 		Filme filme2 = new Filme("Título Filme2", "Nome_Autor Filme2", "Texto Filme2", "Grande", categoria1);

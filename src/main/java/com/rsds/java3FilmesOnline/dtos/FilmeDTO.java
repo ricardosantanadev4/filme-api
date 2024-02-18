@@ -1,41 +1,27 @@
-package com.rsds.java3FilmesOnline.models;
+package com.rsds.java3FilmesOnline.dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rsds.java3FilmesOnline.models.Categoria;
+import com.rsds.java3FilmesOnline.models.Filme;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+public class FilmeDTO {
 
-@Entity
-public class Filme {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String titulo;
-	private String nomeAutor;
+	private String nome_autor;
 	private String texto;
 	private String tamanho;
 
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
-	public Filme() {
+	public FilmeDTO(Filme filme) {
+		this.id = filme.getId();
+		this.titulo = filme.getTitulo();
+		this.nome_autor = filme.getNome_autor();
+		this.texto = filme.getTexto();
+		this.tamanho = filme.getTamanho();
+		this.categoria = filme.getCategoria();
 	}
-
-	public Filme(String titulo, String nomeAutor, String texto, String tamanho, Categoria categoria) {
-		this.titulo = titulo;
-		this.nomeAutor = nomeAutor;
-		this.texto = texto;
-		this.tamanho = tamanho;
-		this.categoria = categoria;
-	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -53,11 +39,11 @@ public class Filme {
 	}
 
 	public String getNome_autor() {
-		return nomeAutor;
+		return nome_autor;
 	}
 
 	public void setNome_autor(String nome_autor) {
-		this.nomeAutor = nome_autor;
+		this.nome_autor = nome_autor;
 	}
 
 	public String getTexto() {
